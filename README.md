@@ -35,7 +35,7 @@ The model simulates:
  * 2 intel realsense D415 cameras
  * SICK TIM 240 lidar
  * RGB camera
- * Differnetial drive base robot
+ * Differential drive robot base
 
 The two depth images from the realsense are converted to laser scans and can be used for obstical avoidance along with the lidar.
 

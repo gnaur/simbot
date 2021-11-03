@@ -27,3 +27,17 @@ It has the gazebo house as an example world for simulation
 It references a roboclaw2 driver - you will need to change this for your robot
 
 The model simulates 2 intel realsense D415 cameras , a SICK TIM 240 lidar and an RGB camera on a differnetial base robot
+
+## Dependencies
+For ROS2 Galactic you will need these packages built from src as they are not released in galactic yet
+
+* laser_filters
+* pointcloud_to_laserscan
+* twist_mux
+
+You also need the realsense  sdk and realsense-ros packages
+
+The launch  file (if not simulating) tries to launch a roboclaw2 driver, change this to the real base driver you have
+
+Use rosdep to install other dependent packages
+

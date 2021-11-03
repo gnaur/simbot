@@ -3,6 +3,8 @@
 ROS2 (galactic) Example of robot with gazebo simulation
 
 An example ROS2 galactic robot with a gazebo simulation
+
+![Image of simbot](https://github.com/gnaur/simbot/simbot.png)
  
 ## Launching
 

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot name="simbot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+  <!-- Define robot constants -->
+  <!-- xacro:property name="pi" value="3.141592654"/ -->
+
+  <xacro:property name="base_radius" value="0.185"/>
+  <xacro:property name="base_height" value="0.110"/>
+
+
+  <xacro:property name="body_width" value="0.320"/>
+  <xacro:property name="body_depth" value="0.220"/>
+  <xacro:property name="body_height" value="0.500"/>
+
+  <xacro:property name="wheel_radius" value="0.085"/>
+  <xacro:property name="wheel_width" value="0.04"/>
+
+  <xacro:property name="wheel_ygap" value="0.025"/>
+ 
+  <xacro:property name="wheel_xoff" value="0.0"/>
+  <xacro:property name="wheel_yoff" value="${base_radius+wheel_ygap}"/>
+
+  <xacro:property name="caster_radius" value="0.04"/>
+  <xacro:property name="caster_xoff"   value="0.13"/>
+
+  <xacro:property name="lidar_xoff" value="0.130"/>
+  <xacro:property name="lidar_zoff" value="${base_height/2}"/>
+
+  <xacro:property name="cam_bottom_xoff" value="0.180"/>
+  <xacro:property name="cam_bottom_zoff" value="${lidar_zoff}"/>
+  <xacro:property name="cam_bottom_tilt" value="${pi*45.0/180.0}"/>
+
+  <xacro:property name="cam_top_xoff" value="0.02"/>
+  <xacro:property name="cam_top_zoff" value="0.5"/>
+  <xacro:property name="cam_top_tilt" value="${-pi*45.0/180.0}"/>
+
+  <xacro:property name="cam_rgb_xoff" value="0.020"/>
+  <xacro:property name="cam_rgb_zoff" value="0.45"/>
+  <xacro:property name="cam_rgb_tilt" value="0.0"/>
+</robot>

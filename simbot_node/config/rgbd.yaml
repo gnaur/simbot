@@ -1,0 +1,139 @@
+cam_bottom:
+  cam_bottom: # configuration for realsense camera
+    ros__parameters:
+
+      #serial_no : '051222063114'
+      serial_no : '102422070149'
+
+      base_frame_id : 'cam_bottom_link'
+
+      enable_depth : True
+      depth_optical_frame_id : "cam_bottom_depth_optical_frame"
+      depth_frame_id : "cam_bottom_depth_frame"
+      depth_width : 424
+      depth_height : 240
+      depth_fps : 15.0
+
+      enable_color : True
+      color_optical_frame_id : "cam_bottom_color_optical_frame"
+      color_frame_id : "cam_bottom_color_frame"
+      color_width : 640
+      color_height : 480
+      color_fps : 15.0
+
+      enable_infra : False
+      enable_infra1 : False
+      enable_infra2 : False
+
+      enable_fisheye : False
+      enable_fisheye1 : False
+      enable_fisheye2 : False
+
+      enable_pose : False
+      enable_confidence : False
+
+      publish_odom_tf : False
+
+      tf_publish_rate : 10.0
+
+      enable_pointcloud : True 
+
+      clip_distance : 1.5
+
+      initial_reset : True
+
+      pointcloud :
+        frames_queue_size : 32
+
+      stereo_module :
+        frames_queue_size : 32
+
+      rgb_camera :
+        frames_queue_size : 32
+
+  pc_to_ls:
+    ros__parameters:
+      target_frame : "lidar_link"
+      transform_tolerance : 0.05
+      min_height : 0.15
+      max_height : 1.3
+      #angle_min': -1.5708,  # -M_PI/2
+      #angle_max': 1.5708,  # M_PI/2
+      #angle_increment': 0.0087,  # M_PI/360.0
+      scan_time : 0.067
+      range_min : 0.05
+      range_max : 1.0
+      use_inf : True 
+      inf_epsilon : 1.0
+      transform_tolerance : 0.2
+
+cam_top:
+  cam_top: # configuration for toprealsense camera
+    ros__parameters:
+
+      serial_no : '045522060584'
+
+      base_frame_id : 'cam_top_link'
+     
+      enable_depth : True
+      depth_optical_frame_id : "cam_top_depth_optical_frame"
+      depth_frame_id : "cam_top_depth_frame"
+      depth_width : 424
+      depth_height : 240
+      depth_fps : 15.0
+
+      enable_color : True
+      color_optical_frame_id : "cam_top_color_optical_frame"
+      color_frame_id : "cam_top_color_frame"
+      color_width : 640
+      color_height : 480
+      color_fps : 15.0
+
+      enable_infra : False
+      enable_infra1 : False
+      enable_infra2 : False
+
+      enable_fisheye : False
+      enable_fisheye1 : False
+      enable_fisheye2 : False
+
+      enable_pose : False
+      enable_confidence : False
+
+      publish_odom_tf : False
+
+      tf_publish_rate : 10.0
+
+      enable_pointcloud : True 
+
+      clip_distance : 2.0
+
+      initial_reset : True
+
+      pointcloud :
+        frames_queue_size : 32
+
+      stereo_module :
+        frames_queue_size : 32
+
+      rgb_camera :
+        frames_queue_size : 32
+
+
+  pc_to_ls:
+    ros__parameters:
+      target_frame : "lidar_link"
+      transform_tolerance : 0.05
+      min_height : -0.175
+      max_height : 1.3
+      #angle_min': -1.5708,  # -M_PI/2
+      #angle_max': 1.5708,  # M_PI/2
+      #angle_increment': 0.0087,  # M_PI/360.0
+      scan_time : 0.067
+      range_min : 0.05
+      range_max : 1.0
+      use_inf : True 
+      inf_epsilon : 1.0
+      transform_tolerance : 0.1
+      
+

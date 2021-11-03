@@ -1,0 +1,22 @@
+teleop:
+  ros__parameters:
+    axis_linear:  # Left thumb stick vertical
+      x: 1
+    scale_linear:
+      x: 0.7
+    scale_linear_turbo:
+      x: 1.5
+
+    axis_angular:  # Left thumb stick horizontal
+      yaw: 0
+    scale_angular:
+      yaw: 0.4
+
+    enable_button: 4  # Left trigger button
+    enable_turbo_button: 5  # Right trigger button
+
+joystick:
+  ros__parameters:
+    deadzone : 0.3
+    autorepeat_rate : 5.0
+    dev : "/dev/input/js0"

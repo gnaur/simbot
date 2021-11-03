@@ -4,7 +4,7 @@ ROS2 (galactic) Example of robot with gazebo simulation
 
 An example ROS2 galactic robot with a gazebo simulation
 
-![Image of simbot](https://github.com/gnaur/simbot/simbot.png)
+![Image of simbot](https://github.com/gnaur/simbot/blob/main/simbot.png)
  
 ## Launching
 
@@ -28,7 +28,21 @@ It has the gazebo house as an example world for simulation
 
 It references a roboclaw2 driver - you will need to change this for your robot
 
-The model simulates 2 intel realsense D415 cameras , a SICK TIM 240 lidar and an RGB camera on a differnetial base robot
+The model simulates:
+ * 2 intel realsense D415 cameras
+ * SICK TIM 240 lidar
+ * RGB camera
+ * Differnetial drive base robot
+
+The two depth images from the realsense are converted to laser scans and can be used for obstical avoidance along with the lidar.
+
+The package supports the Navigation2 framework for SLAM mapping and Navigation
+
+When not simulationg in gazebo the package can be used to run a real robot.
+
+The packages assumes you have a roboclaw2 motor driver and a SICK TIM lidar.
+
+If you are using different devices on your real robot you will need to modify the launch files to include drivers for the devices you are using.
 
 ## Dependencies
 For ROS2 Galactic you will need these packages built from src as they are not released in galactic yet
@@ -37,9 +51,11 @@ For ROS2 Galactic you will need these packages built from src as they are not re
 * pointcloud_to_laserscan
 * twist_mux
 
-You also need the realsense  sdk and realsense-ros packages
-
-The launch  file (if not simulating) tries to launch a roboclaw2 driver, change this to the real base driver you have
+You also need the realsense sdk and realsense-ros packages
 
 Use rosdep to install other dependent packages
+
+
+
+
 

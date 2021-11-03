@@ -8,15 +8,15 @@ An example ROS2 galactic robot with a gazebo simulation
 
 To launch an actual robot:
 
-...
-ros2 launch simbot_node simbot.launch.py map:=<your map yaml file> joy_config:=<your joystick type>
-...
+
+ ros2 launch simbot_node simbot.launch.py map:=<your map yaml file> joy_config:=<your joystick type>
+
 
 to launch the  robot in gazebo simulation: 
 
-...
-ros2 launch simbot_node simbot.launch.py use_sim:=true map:=gazebo_house5.yaml joy_config:=<your joystick type>
-...
+
+ ros2 launch simbot_node simbot.launch.py use_sim:=true map:=gazebo_house5.yaml joy_config:=<your joystick type>
+
  
 The joystick type can be xbox or xbox360  - ps2 may also work but not tested
  

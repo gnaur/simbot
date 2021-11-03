@@ -1,13 +1,17 @@
 # simbot
+
 ROS2 (galactic) Example of robot with gazebo simulation
 
 An example ROS2 galactic robot with a gazebo simulation
  
 ## Launching
-To launch an actual robot 
+
+To launch an actual robot:
+
 ros2 launch simbot_node simbot.launch.py map:=<your map yaml file> joy_config:=<your joystick type>
 
 to launch the  robot in gazebo simulation: 
+ 
 ros2 launch simbot_node simbot.launch.py use_sim:=true map:=gazebo_house5.yaml joy_config:=<your joystick type>
 
 It has the gazebo house as an example world for simulation 

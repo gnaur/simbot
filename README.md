@@ -24,7 +24,7 @@ Repot bugs in the Issues tab.
 
 ### Navigation Mode
 
-To Run and navigate the robot in a pre mapped space use these commands:
+To run and navigate the robot in a pre mapped space use these commands:
 
 
 To launch an actual robot:
@@ -36,13 +36,16 @@ To launch an actual robot:
 To launch the  robot in gazebo simulation: 
 
 
-    ros2 launch simbot_node simbot.launch.py use_sim:=true map:=<your map yaml file>  joy_config:=<your joystick type>
+    ros2 launch simbot_node simbot.launch.py use_sim:=true map:=<your map yaml file>  joy_config:=<your joystick type> [model:=<gazebo model name>]
 
-An example map for for the simulated environment is = gazebo_house5.yaml
+An example map for the default simulated environment is = gazebo_house5.yaml
 
+You can override the default simulation model by providing the name of an alternative model file by using the model:=<gazebo model name> parameter
+
+ 
 ### Mapping Mode
 
-To Create a map of an environment use these commands:
+To create a map of an environment use these commands:
 
 
 To launch an actual robot:
@@ -54,15 +57,15 @@ To launch an actual robot:
 To launch the  robot in gazebo simulation: 
 
 
-    ros2 launch simbot_node simbot.launch.py use_sim:=true mappping:=true joy_config:=<your joystick type>
+    ros2 launch simbot_node simbot.launch.py use_sim:=true mappping:=true joy_config:=<your joystick type> [model:=<gazebo model name>]
     
     
-Done Forget to save the mapp with teh standard map_server tools after you are done.
+Done forget to save the map with the standard map_server tools after you are done.
 
-Maps should be saved to the  simbot_navigation/maps folder.
+Maps should be saved to the  'simbot_navigation/maps' folder.
 
- 
-The joystick type can be xbox or xbox360  - ps2 and others may also work but have not been tested
+
+As above the joystick type can be specified and also the optional simulation model name.
 
  
 ## Supported Features

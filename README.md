@@ -16,6 +16,8 @@ Please feel free to open discussions in the discussions tab.
 
 Contributions via pull request are welcome.
 
+Repot bugs in the Issues tab.
+
 
 ## Launching
 

@@ -12,7 +12,7 @@ An example ROS2 galactic robot with a gazebo simulation
 
 ## Feedback
 
-Please feel free to open discussions in teh discussions tab.
+Please feel free to open discussions in the discussions tab.
 
 Contributions via pull request are welcome.
 

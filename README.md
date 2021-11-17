@@ -41,7 +41,8 @@ To launch the  robot in gazebo simulation:
 An example map for the default simulated environment is = gazebo_house5.yaml
 
 You can override the default simulation model by providing the name of an alternative model file by using the optional world:=<gazebo world name> parameter
-
+ 
+World files should be saved in simbot_description/worlds/simbot_worlds/
  
 ### Mapping Mode
 
@@ -51,13 +52,13 @@ To create a map of an environment use these commands:
 To launch an actual robot:
 
 
-    ros2 launch simbot_node simbot.launch.py mappping:=true joy_config:=<your joystick type>
+    ros2 launch simbot_node simbot.launch.py mappping:=True joy_config:=<your joystick type>
 
 
 To launch the  robot in gazebo simulation: 
 
 
-    ros2 launch simbot_node simbot.launch.py use_sim:=true mappping:=true joy_config:=<your joystick type> [model:=<gazebo world file name>]
+    ros2 launch simbot_node simbot.launch.py use_sim:=true mappping:=True joy_config:=<your joystick type> [model:=<gazebo world file name>]
     
     
 Done forget to save the map with the standard map_server tools after you are done.

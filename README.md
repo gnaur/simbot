@@ -32,12 +32,12 @@ It has the gazebo house as an example world for simulation
 It references a roboclaw2 driver - you will need to change this for your robot
 
 The model simulates:
- * 2 intel realsense D415 cameras
- * SICK TIM 240 lidar
+ * intel realsense D415 camera
  * RGB camera
+ * Lidar
  * Differential drive robot base
 
-The two depth images from the realsense are converted to laser scans and can be used for obstical avoidance along with the lidar.
+The depth images from the realsense are converted to laser scan and can be used for obstical avoidance along with the lidar.
 
 The package supports the Navigation2 framework for SLAM mapping and Navigation
 

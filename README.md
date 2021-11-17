@@ -9,7 +9,23 @@ An example ROS2 galactic robot with a gazebo simulation
 ![Image of simbot](https://github.com/gnaur/simbot/blob/main/simbot.png)
  
 
+
+## Feedback
+
+Please feel free to open discussions in the discussions tab.
+
+Contributions via pull request are welcome.
+
+Repot bugs in the Issues tab.
+
+
 ## Launching
+
+
+### Navigation Mode
+
+To run and navigate the robot in a pre mapped space use these commands:
+
 
 To launch an actual robot:
 
@@ -20,10 +36,37 @@ To launch an actual robot:
 To launch the  robot in gazebo simulation: 
 
 
-    ros2 launch simbot_node simbot.launch.py use_sim:=true map:=gazebo_house5.yaml joy_config:=<your joystick type>
+    ros2 launch simbot_node simbot.launch.py use_sim:=true map:=<your map yaml file>  joy_config:=<your joystick type> [world:=<gazebo world file>]
+
+An example map for the default simulated environment is = gazebo_house5.yaml
+
+You can override the default simulation model by providing the name of an alternative model file by using the optional world:=<gazebo world name> parameter
 
  
-The joystick type can be xbox or xbox360  - ps2 may also work but not tested
+### Mapping Mode
+
+To create a map of an environment use these commands:
+
+
+To launch an actual robot:
+
+
+    ros2 launch simbot_node simbot.launch.py mappping:=true joy_config:=<your joystick type>
+
+
+To launch the  robot in gazebo simulation: 
+
+
+    ros2 launch simbot_node simbot.launch.py use_sim:=true mappping:=true joy_config:=<your joystick type> [model:=<gazebo world file name>]
+    
+    
+Done forget to save the map with the standard map_server tools after you are done.
+
+Maps should be saved to the  'simbot_navigation/maps' folder.
+
+
+As above the joystick type can be specified and also the optional simulation world file can be used.
+
  
 ## Supported Features
 
@@ -32,12 +75,12 @@ It has the gazebo house as an example world for simulation
 It references a roboclaw2 driver - you will need to change this for your robot
 
 The model simulates:
- * 2 intel realsense D415 cameras
- * SICK TIM 240 lidar
+ * Intel realsense D415 camera
  * RGB camera
+ * Lidar
  * Differential drive robot base
 
-The two depth images from the realsense are converted to laser scans and can be used for obstical avoidance along with the lidar.
+The depth images from the realsense are converted to laser scan and can be used for obstical avoidance along with the lidar.
 
 The package supports the Navigation2 framework for SLAM mapping and Navigation
 

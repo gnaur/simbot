@@ -9,6 +9,14 @@ An example ROS2 galactic robot with a gazebo simulation
 ![Image of simbot](https://github.com/gnaur/simbot/blob/main/simbot.png)
  
 
+
+## Feedback
+
+Please feel free to open discussions in teh discussions tab.
+
+Contributions via pull request are welcome.
+
+
 ## Launching
 
 To launch an actual robot:

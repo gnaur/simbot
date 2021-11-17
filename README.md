@@ -21,6 +21,12 @@ Repot bugs in the Issues tab.
 
 ## Launching
 
+
+### Navigation Mode
+
+To Run and navigate the robot in a pre mapped space use these commands:
+
+
 To launch an actual robot:
 
 
@@ -30,10 +36,34 @@ To launch an actual robot:
 To launch the  robot in gazebo simulation: 
 
 
-    ros2 launch simbot_node simbot.launch.py use_sim:=true map:=gazebo_house5.yaml joy_config:=<your joystick type>
+    ros2 launch simbot_node simbot.launch.py use_sim:=true map:=<your map yaml file>  joy_config:=<your joystick type>
+
+An example map for for the simulated environment is = gazebo_house5.yaml
+
+### Mapping Mode
+
+To Create a map of an environment use these commands:
+
+
+To launch an actual robot:
+
+
+    ros2 launch simbot_node simbot.launch.py mappping:=true joy_config:=<your joystick type>
+
+
+To launch the  robot in gazebo simulation: 
+
+
+    ros2 launch simbot_node simbot.launch.py use_sim:=true mappping:=true joy_config:=<your joystick type>
+    
+    
+Done Forget to save the mapp with teh standard map_server tools after you are done.
+
+Maps should be saved to the  simbot_navigation/maps folder.
 
  
-The joystick type can be xbox or xbox360  - ps2 may also work but not tested
+The joystick type can be xbox or xbox360  - ps2 and others may also work but have not been tested
+
  
 ## Supported Features
 
@@ -42,7 +72,7 @@ It has the gazebo house as an example world for simulation
 It references a roboclaw2 driver - you will need to change this for your robot
 
 The model simulates:
- * intel realsense D415 camera
+ * Intel realsense D415 camera
  * RGB camera
  * Lidar
  * Differential drive robot base

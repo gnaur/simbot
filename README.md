@@ -4,8 +4,11 @@ ROS2 (galactic) Example of robot with gazebo simulation
 
 An example ROS2 galactic robot with a gazebo simulation
 
+![Image of simbot in gazebo](https://github.com/gnaur/simbot/blob/main/simbot_gazebo.png)
+
 ![Image of simbot](https://github.com/gnaur/simbot/blob/main/simbot.png)
  
+
 ## Launching
 
 To launch an actual robot:
@@ -32,7 +35,7 @@ The model simulates:
  * 2 intel realsense D415 cameras
  * SICK TIM 240 lidar
  * RGB camera
- * Differnetial drive base robot
+ * Differential drive robot base
 
 The two depth images from the realsense are converted to laser scans and can be used for obstical avoidance along with the lidar.
 

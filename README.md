@@ -36,11 +36,11 @@ To launch an actual robot:
 To launch the  robot in gazebo simulation: 
 
 
-    ros2 launch simbot_node simbot.launch.py use_sim:=true map:=<your map yaml file>  joy_config:=<your joystick type> [model:=<gazebo model name>]
+    ros2 launch simbot_node simbot.launch.py use_sim:=true map:=<your map yaml file>  joy_config:=<your joystick type> [world:=<gazebo world file>]
 
 An example map for the default simulated environment is = gazebo_house5.yaml
 
-You can override the default simulation model by providing the name of an alternative model file by using the model:=<gazebo model name> parameter
+You can override the default simulation model by providing the name of an alternative model file by using the optional world:=<gazebo world name> parameter
 
  
 ### Mapping Mode
@@ -57,7 +57,7 @@ To launch an actual robot:
 To launch the  robot in gazebo simulation: 
 
 
-    ros2 launch simbot_node simbot.launch.py use_sim:=true mappping:=true joy_config:=<your joystick type> [model:=<gazebo model name>]
+    ros2 launch simbot_node simbot.launch.py use_sim:=true mappping:=true joy_config:=<your joystick type> [model:=<gazebo world file name>]
     
     
 Done forget to save the map with the standard map_server tools after you are done.
@@ -65,7 +65,7 @@ Done forget to save the map with the standard map_server tools after you are don
 Maps should be saved to the  'simbot_navigation/maps' folder.
 
 
-As above the joystick type can be specified and also the optional simulation model name.
+As above the joystick type can be specified and also the optional simulation world file can be used.
 
  
 ## Supported Features

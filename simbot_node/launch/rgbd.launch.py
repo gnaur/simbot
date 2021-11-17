@@ -34,6 +34,7 @@ def generate_launch_description():
 
     config_file = LaunchConfiguration('rgbd_config_file')
 
+    # launch node to convert depth image to a lidar scan as well
     pc_to_ls = Node(
         package='pointcloud_to_laserscan',
         executable='pointcloud_to_laserscan_node',
@@ -51,7 +52,7 @@ def generate_launch_description():
     
     li=LogInfo(msg=use_sim)
 
-
+    # luanch the realsense driver
     realsense_include=GroupAction([
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(realsense_pkg_path,  'launch', 'rs_launch.py')),

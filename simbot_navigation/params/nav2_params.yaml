@@ -194,7 +194,7 @@ local_costmap:
         z_voxels: 16
         max_obstacle_height: 1.3
         mark_threshold: 0
-        observation_sources: lidar_scan top_depth_scan bottom_depth_scan
+        observation_sources: lidar_scan depth_scan 
         lidar_scan:
           topic: /scan
           max_obstacle_height: 1.3
@@ -205,18 +205,8 @@ local_costmap:
           raytrace_min_range: 0.0
           obstacle_max_range: 2.5
           obstacle_min_range: 0.0
-        top_depth_scan:
-          topic: /cam_top/depth_scan
-          max_obstacle_height: 1.3
-          clearing: True
-          marking: True
-          data_type: "LaserScan"
-          raytrace_max_range: 3.0
-          raytrace_min_range: 0.0
-          obstacle_max_range: 2.5
-          obstacle_min_range: 0.0
-        bottom_depth_scan:
-          topic: /cam_bottom/depth_scan
+        depth_scan:
+          topic: /depth_cam/depth_scan
           max_obstacle_height: 1.3
           clearing: True
           marking: True

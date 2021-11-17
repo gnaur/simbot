@@ -28,6 +28,7 @@ def generate_launch_description():
 
     teleop_config_file=[TextSubstitution(text=os.path.join(simbot_node_path,'config','')),joy_config,TextSubstitution(text='.config.yaml')]
 
+    #use a joystick 
     joy_node=Node(
         package=joy_pkg,
         executable=joy_pkg + '_node',
@@ -36,6 +37,7 @@ def generate_launch_description():
         parameters=[teleop_config_file]
     )
 
+    # teleop twist node to drive diff base with joystick
     teleop_twist=Node(
         package='teleop_twist_joy',
         executable='teleop_node',
@@ -45,6 +47,7 @@ def generate_launch_description():
         remappings=[('/cmd_vel','cmd_vel_joy')]
     )
 
+    # mux for cmd velocity to switch between joystick and nav stack
     mux_node=Node(
             package='twist_mux',
             executable='twist_mux',

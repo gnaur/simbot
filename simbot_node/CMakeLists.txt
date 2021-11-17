@@ -23,7 +23,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 
-add_executable(simbot_node src/simbot_node.cpp src/NetThread.cpp src/UDPSocket.cpp)
+add_executable(simbot_node src/simbot_node.cpp)
 target_include_directories(simbot_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)

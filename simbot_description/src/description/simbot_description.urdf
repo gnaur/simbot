@@ -162,54 +162,12 @@
 
   <!-- camera(s) -->
   <!-- RGB -->
-  <link name="cam_rgb_link">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <visual>
-      <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi/2}"/>
-      <geometry>
-          <cylinder radius="0.007" length="0.03"/>
-      </geometry>
-      <material name="Black">
-        <color rgba="0.0 0.0 0.0 1.0"/>
-      </material>
-    </visual>
+  <xacro:rgb_cam name="cam_rgb" x="${cam_rgb_xoff}"  z="${cam_rgb_zoff}"  th="${cam_rgb_tilt}" />
 
-    <collision>
-      <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi/2}"/>
-      <geometry>
-        <cylinder radius="0.007" length="0.03"/>
-      </geometry>
-    </collision>
-
-    <xacro:cylinder_inertia m="0.005" r="0.007" h="0.03"/>
-  </link>
-
-  <joint name="cam_rgb_base_link_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="cam_rgb_link"/>
-    <origin xyz="${cam_rgb_xoff} 0 ${cam_rgb_zoff}" rpy="0 ${-cam_rgb_tilt} 0"/>
-  </joint>
-
-  <link name="cam_rgb_frame"/>
-  <joint name="cam_rgb_joint" type="fixed">
-    <parent link="cam_rgb_link"/>
-    <child link="cam_rgb_frame"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
-
-  <link name="cam_rgb_optical_frame"/>
-  <joint name="cam_rgb_optical_joint" type="fixed">
-    <parent link="cam_rgb_frame"/>
-    <child link="cam_rgb_optical_frame"/>
-    <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
-  </joint>
   
   <!-- Realsense -->
-  <xacro:sensor_d415 name="cam_bottom" parent="base_link" use_nominal_extrinsics="$(arg use_sim)">
-     <origin xyz="${cam_bottom_xoff} 0 ${cam_bottom_zoff}" rpy="0 ${-cam_bottom_tilt} 0"/>
+  <xacro:sensor_d415 name="depth_cam" parent="base_link" use_nominal_extrinsics="$(arg use_sim)">
+     <origin xyz="${depth_cam_xoff} 0 ${depth_cam_zoff}" rpy="0 ${-depth_cam_tilt} 0"/>
   </xacro:sensor_d415>
 
-  <xacro:sensor_d415 name="cam_top" parent="base_link" use_nominal_extrinsics="$(arg use_sim)">
-     <origin xyz="${cam_top_xoff} 0 ${cam_top_zoff}" rpy="0 ${-cam_top_tilt} 0"/>
-  </xacro:sensor_d415>
 </robot>

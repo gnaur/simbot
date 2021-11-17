@@ -20,7 +20,7 @@ def generate_launch_description():
    
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
 
-    
+    # run rviz
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -32,6 +32,7 @@ def generate_launch_description():
         }]
     )
 
+    # if simulationg launch gazebo
     gazebo_include = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(pkg_share + '/launch/gazebo.launch.py'),
         launch_arguments = {

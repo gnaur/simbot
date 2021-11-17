@@ -4157,7 +4157,7 @@
       </collision>
     </link>
     <model name='Mailbox'>
-      <link name='link'>
+      <link name='mb_link'>
         <collision name='collision'>
           <geometry>
             <mesh>
@@ -4184,7 +4184,7 @@
     </model>
     <model name='bookshelf'>
       <static>1</static>
-      <link name='link'>
+      <link name='bs_link'>
         <inertial>
           <mass>1</mass>
         </inertial>
@@ -4347,7 +4347,7 @@
     </model>
     <model name='bookshelf_0'>
       <static>1</static>
-      <link name='link'>
+      <link name='bs0_link'>
         <inertial>
           <mass>1</mass>
         </inertial>
@@ -4510,7 +4510,7 @@
     </model>
     <model name='bookshelf_1'>
       <static>1</static>
-      <link name='link'>
+      <link name='bs1_link'>
         <inertial>
           <mass>1</mass>
         </inertial>
@@ -5160,7 +5160,7 @@
     </model>
     <model name='cafe_table_0'>
       <static>1</static>
-      <link name='link'>
+      <link name='ct_link'>
         <collision name='surface'>
           <pose>0 0 0.755 0 -0 0</pose>
           <geometry>
@@ -5196,7 +5196,7 @@
       <pose>6.35903 -2.27759 0 0 -0 0</pose>
     </model>
     <model name='first_2015_trash_can'>
-      <link name='link'>
+      <link name='tc_link'>
         <inertial>
           <pose>0 0 0.3683 0 -0 0</pose>
           <mass>4.83076</mass>
@@ -5227,7 +5227,7 @@
       <pose>1.88346 1.91193 0 0 -0 0</pose>
     </model>
     <model name='first_2015_trash_can_0'>
-      <link name='link'>
+      <link name='tc_0link'>
         <inertial>
           <pose>0 0 0.3683 0 -0 0</pose>
           <mass>4.83076</mass>
@@ -5259,8 +5259,8 @@
     </model>
     <model name='table'>
       <static>0</static>
-      <link name='link'>
-        <collision name='surface'>
+      <link name='tbl_link'>
+        <collision name='xxsurface'>
           <pose>0 0 1 0 -0 0</pose>
           <geometry>
             <box>
@@ -5290,7 +5290,7 @@
             </script>
           </material>
         </visual>
-        <collision name='front_left_leg'>
+        <collision name='cfront_left_leg'>
           <pose>0.68 0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
@@ -5314,7 +5314,7 @@
             </script>
           </material>
         </visual>
-        <collision name='front_right_leg'>
+        <collision name='cfront_right_leg'>
           <pose>0.68 -0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
@@ -5338,7 +5338,7 @@
             </script>
           </material>
         </visual>
-        <collision name='back_right_leg'>
+        <collision name='cback_right_leg'>
           <pose>-0.68 -0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
@@ -5362,7 +5362,7 @@
             </script>
           </material>
         </visual>
-        <collision name='back_left_leg'>
+        <collision name='cback_left_leg'>
           <pose>-0.68 0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
@@ -5392,7 +5392,7 @@
     <model name='table_marble'>
       <static>1</static>
       <pose>4.88346 2.92577 0.648 0 -0 0</pose>
-      <link name='link'>
+      <link name='tm_link'>
         <collision name='collision'>
           <geometry>
             <mesh>

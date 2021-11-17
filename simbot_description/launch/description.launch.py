@@ -18,6 +18,7 @@ def generate_launch_description():
 
     default_model_path = os.path.join(pkg_share, 'src/description/simbot_description.urdf')
 
+    # launch robot_state_publisher to publish URDF and static transforms
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -27,6 +28,7 @@ def generate_launch_description():
         }]
     )
 
+    # launch joint_state publisher to handle dynamic joints
     joint_state_publisher_node = Node(
         package='joint_state_publisher',
         executable='joint_state_publisher',
@@ -38,6 +40,7 @@ def generate_launch_description():
         }]
     )
 
+    # optionaly use joint state gui for debugging (if arg use_state_pub_gui = true)
     joint_state_publisher_gui_node = Node(
         package='joint_state_publisher_gui',
         executable='joint_state_publisher_gui',

@@ -12,7 +12,6 @@ Panels:
         - /LaserScan1/Topic1
         - /Global Cost Map1/Update Topic1
         - /Local Cost Map1/Topic1
-        - /Map1
         - /Map1/Topic1
         - /Map1/Update Topic1
         - /MarkerArray1/Topic1
@@ -20,21 +19,23 @@ Panels:
         - /Odometry1/Covariance1
         - /Odometry1/Covariance1/Position1
         - /Odometry1/Covariance1/Orientation1
-        - /Scan_Bottom1/Topic1
         - /PoseArray1/Topic1
-        - /Scan_Top1
-        - /Scan_Top1/Topic1
+        - /ScanDepth1
+        - /ScanDepth1/Status1
+        - /ScanDepth1/Topic1
         - /LocalPlan1/Topic1
         - /LocalPlan1/Offset1
-        - /Image1
-        - /Image1/Topic1
-        - /PC Top1
-        - /PC Top1/Topic1
-        - /PC Bot1
-        - /Image2
-        - /Image2/Topic1
+        - /Image Depth RGB1
+        - /Image Depth RGB1/Topic1
+        - /PC 1
+        - /PC 1/Topic1
+        - /Image RGB1
+        - /Image RGB1/Topic1
+        - /Image Depth 1
+        - /Image Depth 1/Status1
+        - /Image Depth 1/Topic1
       Splitter Ratio: 0.5143042802810669
-    Tree Height: 310
+    Tree Height: 281
   - Class: slam_toolbox::SlamToolboxPlugin
     Name: SlamToolboxPlugin
   - Class: nav2_rviz_plugins/Navigation 2
@@ -92,47 +93,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        cam_bottom_bottom_screw_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        cam_bottom_color_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        cam_bottom_color_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        cam_bottom_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        cam_bottom_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        cam_bottom_infra1_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        cam_bottom_infra1_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        cam_bottom_infra2_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        cam_bottom_infra2_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        cam_bottom_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         cam_rgb_frame:
           Alpha: 1
           Show Axes: false
@@ -146,43 +106,43 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_bottom_screw_frame:
+        depth_cam_bottom_screw_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_color_frame:
+        depth_cam_color_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_color_optical_frame:
+        depth_cam_color_optical_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_depth_frame:
+        depth_cam_depth_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_depth_optical_frame:
+        depth_cam_depth_optical_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_infra1_frame:
+        depth_cam_infra1_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_infra1_optical_frame:
+        depth_cam_infra1_optical_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_infra2_frame:
+        depth_cam_infra2_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_infra2_optical_frame:
+        depth_cam_infra2_optical_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        cam_top_link:
+        depth_cam_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -424,40 +384,6 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /odom
       Value: false
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: y
-      Class: rviz_default_plugins/LaserScan
-      Color: 252; 233; 79
-      Color Transformer: FlatColor
-      Decay Time: 0
-      Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: -0.909001350402832
-      Min Color: 0; 0; 0
-      Min Intensity: -1.4345173835754395
-      Name: Scan_Bottom
-      Position Transformer: XYZ
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.029999999329447746
-      Style: Points
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Best Effort
-        Value: /cam_bottom/depth_scan
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: true
     - Alpha: 0.20000000298023224
       Arrow Length: 0.30000001192092896
       Axes Length: 0.30000001192092896
@@ -497,7 +423,7 @@ Visualization Manager:
       Max Intensity: 4096
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: Scan_Top
+      Name: ScanDepth
       Position Transformer: XYZ
       Selectable: true
       Size (Pixels): 3
@@ -509,7 +435,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Best Effort
-        Value: /cam_top/depth_scan
+        Value: /depth_cam/depth_scan
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -562,11 +488,11 @@ Visualization Manager:
         Value: /goal_pose
       Value: true
     - Class: rviz_default_plugins/Image
-      Enabled: false
+      Enabled: true
       Max Value: 1
       Median window: 5
       Min Value: 0
-      Name: Image
+      Name: Image Depth RGB
       Normalize Range: true
       Topic:
         Depth: 5
@@ -574,42 +500,8 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Best Effort
-        Value: /cam_bottom/color/image_raw
-      Value: false
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz_default_plugins/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: RGB8
-      Decay Time: 0
-      Enabled: false
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 4096
-      Min Color: 0; 0; 0
-      Min Intensity: 0
-      Name: PC Top
-      Position Transformer: XYZ
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.009999999776482582
-      Style: Flat Squares
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /cam_top/depth/color/points
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: false
+        Value: /depth_cam/color/image_raw
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -625,10 +517,10 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 548
+      Max Intensity: 4096
       Min Color: 0; 0; 0
-      Min Intensity: 120
-      Name: PC Bot
+      Min Intensity: 0
+      Name: "PC "
       Position Transformer: XYZ
       Selectable: true
       Size (Pixels): 3
@@ -640,16 +532,16 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /cam_bottom/depth/color/points
+        Value: /depth_cam/depth/color/points
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
     - Class: rviz_default_plugins/Image
-      Enabled: false
+      Enabled: true
       Max Value: 1
       Median window: 5
       Min Value: 0
-      Name: Image
+      Name: Image RGB
       Normalize Range: true
       Topic:
         Depth: 5
@@ -658,7 +550,22 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Best Effort
         Value: /cam_rgb/image_raw
-      Value: false
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: "Image Depth "
+      Normalize Range: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /depth_cam/depth/image_rect_raw
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -691,39 +598,43 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 9.4375638961792
+      Distance: 13.473756790161133
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.8150997161865234
-        Y: -1.5748578310012817
-        Z: -0.6971347332000732
+        X: 1.9961541891098022
+        Y: 0.4263273775577545
+        Z: -2.535944938659668
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9397973418235779
+      Pitch: 1.0247973203659058
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.9773597717285156
+      Yaw: 4.262349605560303
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1016
+  Height: 1338
   Hide Left Dock: false
   Hide Right Dock: false
-  Image:
+  "Image Depth ":
+    collapsed: false
+  Image Depth RGB:
+    collapsed: false
+  Image RGB:
     collapsed: false
   Navigation 2:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000200000000000002850000039efc020000000efb000000100044006900730070006c006100790073010000003d00000173000000c900fffffffb00000014005200470042005f0042006f00740074006f006d01000001a4000000750000000000000000fb0000001800440065007000740068005f0042006f00740074006f006d01000001cc000000a10000000000000000fb0000000e005200470042005f0054006f0070010000020a000000f00000000000000000fb0000001200440065007000740068005f0054006f0070010000027c0000011b0000000000000000fb0000000a0049006d0061006700650000000171000000a60000002800fffffffb0000000a0049006d00610067006500000001c2000001480000002800fffffffb0000000a0049006d006100670065010000043e000000d70000000000000000fb0000000a0049006d006100670065010000043e000000d70000000000000000fb000000220053006c0061006d0054006f006f006c0062006f00780050006c007500670069006e0000000117000001850000018500fffffffb0000000a0049006d006100670065010000035b000000860000000000000000fb00000018004e0061007600690067006100740069006f006e0020003201000001b6000002250000013900fffffffb00000018004e0061007600690067006100740069006f006e00200032010000040a000001390000000000000000fb0000000a0049006d00610067006501000003c4000000cf0000000000000000000000030000075400000139fc0100000001fb00000018004e0061007600690067006100740069006f006e002000320000000000000007540000000000000000000004bb0000039e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000020000000000000286000004e0fc020000000ffb000000100044006900730070006c006100790073010000003d00000156000000c900fffffffb00000014005200470042005f0042006f00740074006f006d01000001a4000000750000000000000000fb0000001800440065007000740068005f0042006f00740074006f006d01000001cc000000a10000000000000000fb0000000e005200470042005f0054006f0070010000020a000000f00000000000000000fb0000001200440065007000740068005f0054006f0070010000027c0000011b0000000000000000fb0000001e0049006d00610067006500200044006500700074006800200052004700420100000199000000d70000002800fffffffb000000120049006d00610067006500200052004700420100000276000000910000002800fffffffb0000000a0049006d006100670065010000043e000000d70000000000000000fb0000000a0049006d006100670065010000043e000000d70000000000000000fb000000220053006c0061006d0054006f006f006c0062006f00780050006c007500670069006e0000000117000001850000018500fffffffb0000000a0049006d006100670065010000035b000000860000000000000000fb00000018004e0061007600690067006100740069006f006e00200032010000030d000001390000013900fffffffb00000018004e0061007600690067006100740069006f006e00200032010000040a000001390000000000000000fb0000000a0049006d00610067006501000003c4000000cf0000000000000000fb000000180049006d0061006700650020004400650070007400680020010000044c000000d10000002800ffffff000000030000075400000139fc0100000001fb00000018004e0061007600690067006100740069006f006e00200032000000000000000754000000000000000000000483000004e000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   SlamToolboxPlugin:
     collapsed: false
-  Width: 1862
+  Width: 1807
   X: 58
-  Y: 27
+  Y: 40

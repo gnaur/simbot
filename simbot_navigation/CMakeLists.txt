@@ -33,7 +33,7 @@ if(BUILD_TESTING)
 endif()
 
 install(
-  DIRECTORY  launch maps params behavior_trees
+  DIRECTORY  maps params behavior_trees
   DESTINATION share/${PROJECT_NAME}
 )
 
